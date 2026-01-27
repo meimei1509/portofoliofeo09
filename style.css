@@ -1,0 +1,82 @@
+/* =======================================================
+   1. RESET & VARIABEL (PENGATURAN DASAR)
+   Bagian ini mengatur fondasi agar tampilan konsisten.
+   ======================================================= */
+
+/* Memilih semua elemen di halaman */
+* {
+    margin: 0;              /* Menghapus jarak luar bawaan browser */
+    padding: 0;             /* Menghapus jarak dalam bawaan browser */
+    box-sizing: border-box; /* Padding tidak akan mengubah ukuran elemen */
+    font-family: 'Segoe UI', sans-serif; /* Menggunakan font yang bersih */
+}
+
+/* Variabel Warna: Ubah di sini untuk mengganti tema seluruh web */
+:root {
+    --primary-color: #FFD500; /* Warna Kuning cerah (untuk aksen/tombol) */
+    --primary-dark: #e6c200;  /* Warna Kuning agak gelap (untuk efek hover) */
+    --text-color: #333333;    /* Abu tua (untuk teks agar mudah dibaca) */
+    --bg-white: #ffffff;      /* Putih bersih */
+    --bg-light: #fffdf5;      /* Putih kekuningan (untuk selingan section) */
+    --spacing: 60px 5%;       /* Standar jarak atas-bawah & kiri-kanan */
+}
+
+/* Mengatur scroll agar halus saat diklik navigasi */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-white); /* Latar belakang utama putih */
+    color: var(--text-color);          /* Warna teks dasar */
+    line-height: 1.6;                  /* Jarak antar baris teks */
+}
+
+/* Menghilangkan garis bawah pada semua link */
+a {
+    text-decoration: none;
+    color: inherit; /* Warna mengikuti induknya */
+}
+
+/* Memastikan gambar tidak meluber keluar dari wadahnya */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =======================================================
+   2. NAVIGASI (HEADER)
+   Menggunakan Flexbox agar Logo dan Menu berseberangan.
+   ======================================================= */
+
+header {
+    background-color: var(--bg-white); /* Latar navigasi putih */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Bayangan tipis di bawah */
+    position: sticky; /* Navigasi tetap menempel saat di-scroll */
+    top: 0;           /* Menempel di bagian paling atas */
+    z-index: 1000;    /* Agar navigasi selalu di atas elemen lain */
+}
+
+nav {
+    display: flex;             /* Mengaktifkan tata letak Flexbox */
+    justify-content: space-between; /* Jarak maksimal antara Logo dan Menu */
+    align-items: center;       /* Posisi vertikal di tengah */
+    padding: 15px 5%;          /* Jarak dalam navigasi */
+}
+
+.logo {
+    font-size: 1.5rem;         /* Ukuran font logo besar */
+    font-weight: bold;         /* Menebalkan huruf */
+    color: var(--text-color);  /* Warna teks logo */
+}
+
+/* Memberi warna kuning pada kata 'Porto' di dalam logo */
+.logo span {
+    color: var(--primary-color);
+}
+
+nav ul {
+    list-style: none; /* Menghilangkan titik bullet pada list */
+    display: flex;    /* Membuat menu berjejer ke samping */
+    gap: 20px;        /* Jarak antar menu */
+}
